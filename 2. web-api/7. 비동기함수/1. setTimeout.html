@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <button id="timeout">3초 후 메시지 보기</button>
+  <p class="msg"></p>
+
+  <script>
+  //   console.log('오늘의 할 일은 무엇일까요?');
+
+  //   setTimeout(() => {
+  //     console.log('오늘은 집에서 쉴 거에요~!');
+  //   }, 15000);
+
+  // console.log('그래 잘 쉬어라~~~');
+    const $btn = document.getElementById('timeout');
+    $btn.addEventListener('click', e => {
+      setTimeout(() => {
+        document.querySelector('.msg').textContent = '3초가 지난 후 메시지입니다!';
+      }, 3000);
+      console.log('setTimeout 이후에 작성한 로그입니다.');
+    });
+
+  </script>
+</body> 
+</html>

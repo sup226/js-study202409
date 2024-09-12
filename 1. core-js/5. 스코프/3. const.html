@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let 키워드로 변수를 선언하면 값의 변경이 자유롭다.
+        let x;
+        x = 'zz';
+        x = 'ff';
+        console.log(x);
+
+        // const: 불변의 상수 선언
+        // 값의 변경이 불가능합니다.(자바의 final과 유사함)
+        const y = '메롱';
+        // y = 'ggg'; // 에러
+        console.log(y);
+
+        // 상수는 객체의 불변성을 유지할 수 있다.
+        // 프로퍼티 변경은 얼마든지 가능하다.
+        const kim = {
+            name: '김철수',
+            age: 30,
+        };
+        kim.age = 31; // 가능함. kim을 바꾸는 것이 아니고 kim이 가리키고 있는 객체의 프로퍼티를 바꾼거임.
+        kim.name = '김개똥';
+
+        // kim = {
+        //     name: '김춘식',
+        //     age: 10,
+        // } // 불가능함.
+
+        // for (const i = 0; i < 5; i++) {} // 불가능함. 반복하면서 i는 계속 변해야함
+        for (let i = 0; i < 5; i++) {} // let이 맞음
+
+    </script>
+</body>
+</html>

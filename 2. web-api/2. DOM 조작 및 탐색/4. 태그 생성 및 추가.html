@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruits">
+        <li>사과</li>
+    </ul>
+
+    <script>
+        /*
+        // 태그(요소 노드) 생성: <li></li>
+        const $newLi = document.createElement('li'); // 비어있는 li를 생성함
+
+        // 텍스 추가하기: <li>바나나</li>
+        $newLi.textContent = '바나나';
+
+        // ul에 자식노드로 붙이자
+        document.getElementById('fruits').appendChild($newLi); // 맨 마지막 자식으로 추가
+         
+        // innerHTML은 오타나기 쉽고 수정하기 어려움, 하지만 이 방법은 코드가 긺 -> 함수화하면 됨.
+        */
+
+        // 태그 이름과 텍스트를 전달받으면 태그를 생성하는 함수를 선언
+        // 매개변수의 기본값을 세팅할 수 있습니다.
+        // 값이 전달되면 전달된 값을 우선하고, 만약 전달되지 않으면 기본값을 사용합니다.
+        function makeNewTag(tagName = 'div', option = {}) { // 값이 전달되지 않으면 세팅할 기본 값을 줌.
+            const $newTag = document.createElement(tagName);
+            if (option.text) $newTag.textContent = option.text;
+            return $newTag;
+        }
+
+        // 태그를 추가하는 함수
+        function append($parent, tagName, option) {
+            $parent.appendChild(makeNewTag(tagName, option));
+        };
+
+        // 함수를 이용해서 태그를 생성하고 추가하자
+        const $ul = document.getElementById('fruits');
+        append($ul, 'li', {text: '바나나'});
+        append($ul, 'li', {text: '망고'});
+        append($ul, 'li', {text: '오렌쥐'});
+        append($ul, 'li', {text: '수박'});
+    </script>
+</body>
+</html>

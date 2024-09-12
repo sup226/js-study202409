@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 문제점 1. 변수의 중복 선언을 암묵적으로 허용함.
+        var x = 10;
+        var x = 'ddd';
+        console.log(`x: ${x}`);
+
+        // 해결: let은 변수의 중복선언을 막아줍니다.
+        // let x = 10;
+        // let x = 'ddd';
+        // console.log(`x: ${x}`);
+
+        // 문제점 2. 블록 레벨 스코프를 지원하지 않음.
+        var i = '메롱';
+
+        for (var i = 0; i < 10; i++) {
+            console.log(`for - i: ${i}`);
+        }
+
+        console.log(`global - i: ${i}`);
+
+        if (true) {
+            var temp = '홍길동';
+        }
+
+        console.log(temp); // name은 윈도우에 변수가 있어서 오류가 남
+
+        // 해결
+        // let i = '메롱';
+
+        // for (let i = 0; i < 10; i++) {
+        //     console.log(`for - i: ${i}`);
+        // }
+
+        // console.log(`global - i: ${i}`);
+
+        // if (true) {
+        //     let temp = '홍길동';
+        // }
+
+        // console.log(temp);
+
+        // 문제점 3. 변수 선언을 마지막에 해도 동작을 함. (변수 호이스팅)
+        /*
+        <변수 호이스팅>
+        var 키워드로 변수를 선언하면 호이스팅에 의해
+        변수 선언문이 자동으로 맨 위로 끌어올려진 것처럼 동작합니다.
+        흐름 해석에 방해되어 가독성과 유지보수성을 현격하게 떨어트립니다.
+        */
+        z = 100;
+        console.log(`z: ${z}`);
+
+        var z;
+
+        // 해결
+        // z = 100;
+        // console.log(`z: ${z}`);
+
+        // let z;
+    </script>
+</body>
+
+</html>

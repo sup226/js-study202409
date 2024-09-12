@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var ex = 10 + "20"; // 자바: 1020, 스크립트: 1020(문자) 검정색
+      console.log(ex);
+
+      var ex2 = 10 * "3"; // 스크립트: 30(숫자) 파란색
+      console.log(ex2);
+
+      var ex3 = 100 + ""; // 스크립트: 100(문자)
+      console.log(ex3);
+      console.log(typeof ex3);
+
+      var ex4 = "" + 550; // 스크립트: 550(문자)
+      console.log(ex4);
+      console.log(typeof ex4);
+
+      var ex5 = +"550"; // 스크립트: 550(숫자)
+      console.log(ex5);
+      console.log(typeof ex5); // number type
+
+      var ex4 = +"false"; // 스크립트: NaN(숫자)
+      console.log(ex4);
+      console.log(typeof ex4); // number type라고 하지만 값은 NaN임
+
+      var ex5 = +true; // 스크립트: 1(숫자)
+      console.log(ex5);
+
+      var ex5 = +false; // 스트립트: 0(숫자)
+      console.log(ex5);
+
+      var ex5 = +null; // 스트립트: 0(숫자)
+      console.log(ex5);
+
+      var ex5 = +NaN; // 스트립트: NaN(숫자), NaN은 경우의 수가 많아서 숫자로 변환할 수 없음
+      console.log(ex5);
+      console.log(typeof ex5);
+
+      console.log("-----------------------------------");
+
+      // Truthy, Falsy
+      // 값이 없거나, 비어있거나, 표현할 수 없으면 부정적(false)임
+      // undefined, null, 0, NaN, ''(빈문자열)은 모두 false,
+      // 나머지는 모두 true로 인식합니다.
+
+      // 함수가 반환하는 값, 통신 결과에 따른 값들이 정확하게 어떤 값인지도 모르더라도
+      // 해당 값이 띠고 있는 논리적 평가에 따라 조건문을 좀 더 수월하게 작성이 가능
+      if ('') console.log('사'); // false
+      if ('hello') console.log('과'); // true
+      if (undefined) console.log('는'); // false
+      if (null) console.log('맛'); // false
+      if (350) console.log('이'); // true
+      if (NaN) console.log('없'); // false
+      if (0) console.log('어'); // false
+      if ([1, 2, 3]) console.log('요'); // true
+
+      /*
+        var isLogin; -> 현재 로그인 여부를 알려줌
+
+        isLogin && <h1>안녕하세요 xxx님<n/1>
+
+        
+        var nick; -> 로그인한 사람의 닉네임
+
+        nick && <h1>안녕하세요 ${nick}님</h1>
+      */
+
+      console.log('------------------------------------')
+
+      // 명시적 변환
+
+      // 문자열이 아닌 값을 문자열로 변환하는 법
+      var a = 10, b = 20;
+      var result = a + String(b); // 1번째 방법
+      result = a.toString() + b.toString(); // 2번째 방법
+      console.log(typeof result); // string type
+
+      // 숫자가 아닌 값을 숫자로 변환하는 법
+      var m = '10', n = '3.14';
+      result = Number(m) + Number(n); // 1번째 방법
+      result = parseInt(m) + parseInt(n); // 2번째 방법
+      console.log(typeof result); // number type
+
+      // 문자열을 논리값으로 변환하는 법
+      // 논리 반전 연산자를 이용해 문자열 'hello'값을 논리형으로 변환 -> not true -> false
+      // false 값을 다시 한번 반전 -> not false -> true
+      var t = 'Hello', f = '';
+      console.log(Boolean(t)); // true 1번째 방법
+      console.log(Boolean(f)); // false
+
+      console.log(!!t); // 2번째 방법
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // prompt 함수는 브라우저에서 입력창을 제공. 리턴 타입은 문자열
+        // prompt 함수 앞에 +를 쓰면 리턴 타입을 숫자로 변환시킴
+        var point = +prompt('정수를 입력하세요.');
+        alert(`당신의 점수: ${point}점!`); // alert는 사용자에게 보여줌(팝업창)
+
+
+        if (point >= 70) {
+            if (point >= 90) {
+                alert('정말 짱이군요!');
+            }
+            alert('합격입니다!');
+        } else if (point >=50) {
+            alert('재시험 대상자!');
+        } else {
+            alert('불합격!');
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일정관리 앱</title>
+
+  <!-- reset.css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+
+  <!-- linear icons -->
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="css/main2.css" />
+
+  <!-- custom js -->
+  <script src="js/app2.js"></script>
+</head>
+
+<body>
+  <section>
+    <h1><i class="fa-solid fa-clipboard-check"></i> 일정관리</h1>
+    <form action="">
+      <label for="add-list" class="hidden">할 일 입력</label>
+      <input type="text" id="add-list" placeholder="할 일을 입력하세요." autocomplete="off" autofocus>
+      <button>
+        <span class="lnr lnr-plus-circle"></span>
+      </button>
+    </form>
+    <ul id="todo-list">
+      <li data-id="1" class="todo-list-item"><input type="checkbox">
+        <span class="text" disabled>할 일1</span>
+        <div class="modify"><span class="lnr lnr-undo"></span></div>
+        <div class="remove"><span class="lnr lnr-cross-circle"></span></div>
+      </li>
+      <li data-id="2" class="todo-list-item"><input type="checkbox">
+        <span class="text" disabled>할 일2</span>
+        <div class="modify"><span class="lnr lnr-undo"></span></div>
+        <div class="remove"><span class="lnr lnr-cross-circle"></span></div>
+      </li>
+      <li data-id="3" class="todo-list-item"><input type="checkbox">
+        <span class="text" disabled>할 일3</span>
+        <div class="modify"><span class="lnr lnr-undo"></span></div>
+        <div class="remove"><span class="lnr lnr-cross-circle"></span></div>
+      </li>
+    </ul>
+  </section>
+</body>
+
+</html>

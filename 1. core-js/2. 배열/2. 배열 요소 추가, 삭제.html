@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pets = ['멍멍이', '야옹이', '짹짹이'];
+        console.log(pets);
+
+        // 자바보다 훨씬 편리함. array list에서 배열을 추가할 때 쓴 메서드는 add()임
+        // 자바: collectios, list.of -> 불변리스트가 됨(크기나 변수 변경 안됨)
+        // push(): 배열 맨 끝에 데이터 추가
+        pets.push('징징이');
+        pets.push('어흥이', '메롱이', '춘식이');
+        console.log(pets);
+
+        // pop(): 배열 맨 끝 데이터를 삭제, 지워지는 데이터를 반환
+        pets.pop();
+        var myPet = pets.pop();
+        var myPet2 = pets.pop();
+
+        console.log(pets);
+        console.log(myPet); // 메롱이
+        console.log(myPet2); // 어흥이
+
+        // 자바: linked shift
+        // shift(): 배열의 맨 첫데이터 삭제
+        // unshift(): 배열의 맨 첫번째에 추가
+        pets.shift();
+        pets.unshift('뽈뽈이');
+        console.log(pets);
+    </script>
+</body>
+</html>

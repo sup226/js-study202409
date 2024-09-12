@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const employee = {
+            empName: '뽀로로',
+            age: 10,
+            hireDate: '2020-01-30',
+            birthDate: '2015-12-31',
+        };
+
+        const { empName, hireDate } = employee;
+        console.log(`name: ${empName} hire: ${hireDate}`);
+
+        // 정석
+        function foo(emp) {
+            console.log(`내 이름은 ${emp.empName}입니다.`);
+            console.log(`나이는 ${emp.age}입니다.`);
+        }
+
+        // 다른 방법
+        function foo(emp) {
+            const { empName, hireDate } = emp;
+            console.log(`내 이름은 ${emp.empName}입니다.`);
+            console.log(`나이는 ${emp.age}입니다.`);
+        }
+
+        // 매개변수에서 객체 디스트럭쳐링
+        function foo({ empName, age }) {
+            console.log(`내 이름은 ${empName}입니다.`);
+            console.log(`나이는 ${age}입니다.`);
+        }
+        foo(employee);
+
+        /////////////////////////////////////////////////
+
+        // 변수명이 너무 길어ㅠ
+        const divStyle = {
+            'font-size': '18px',
+            'background-color': 'red'
+        };
+
+        // 변수명을 바꿔도 돼~
+        const { 'font-size': fontSize, 'background-color': bg } = divStyle;
+        console.log(fontSize);
+        console.log(bg);
+
+        console.log('------------------')
+
+        const dog = {
+            kind: '말티즈',
+            name: '해피',
+            age: 3,
+            injection: false
+        };
+
+        const {kind, age:petAge, ...rest} = dog;
+        console.log(kind);
+        console.log(petAge);
+        console.log(rest);
+        
+        // 객체 복사
+        const copyDog = {...dog}; // 주소값 다름
+        copyDog.age = 100;
+
+        console.log(dog);
+        console.log(copyDog);
+        
+    </script>
+</body>
+
+</html>

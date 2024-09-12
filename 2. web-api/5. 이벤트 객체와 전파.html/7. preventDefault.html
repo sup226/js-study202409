@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a id="link" href="https://github.com">깃허브로 이동!</a>
+
+    <form action="https://www.google.com">
+        <input type="text" placeholder="이메일을 쓰세요" />
+        <button type="submit">확인</button>
+    </form>
+
+    <script>
+        const $link = document.getElementById('link');
+
+        // confirm은 확인과 취소 버튼으로 이루어진 알림창
+        // 확인을 누르면 true가, 취소를 누르면 false가 리턴됩니다.
+        $link.addEventListener('click', (e) => {
+            if (!confirm('깃허브로 이동할까요?')) {
+                e.preventDefault(); // 태그의 고유기능을 죽이기.
+            }
+        });
+
+        // form 객체는 document 객체의 하위 객체 중 하나로
+        // 유일하게 name 속성으로만 form 요소의 접근이 가능합니다.
+        const $myForm = document.myform;
+
+        // 만약 form 내부의 입력 양식 유효성을 검증해야 한다면
+        $myForm.addEventListener('submit', () => {
+            e.preventDefault(); // 일단 submit을 막자
+            if ($myForm.firstElementChild.value === '') {
+                return; // 유효성 검증
+            }
+
+            $myForm.submit(); // 문제 없으면 직접 submit
+        });
+    </script>
+
+</body>
+
+</html>

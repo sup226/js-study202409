@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수의 선언
+        // 함수 이름은 동사적 의미가 내포되게 짓습니다.(자바와 같이)
+        function calcTotal (end) {
+            var total = 0;
+            for (var i=1; i<=end; i++) {
+                total += i;
+            }
+            return total;
+        }
+
+        // 함수를 리터럴 방식으로 선언
+        var add = function(n1, n2) {
+            return n1 + n2;
+        }
+        console.log(add(10, 15));
+
+        // 함수의 호출
+        var result = calcTotal(10);
+        console.log(result);
+
+        // 자바스크립트 함수는 매개변수 개수를 다르게 주더라도 호출은 됩니다.
+        // 정상 작동은 기대하기 힘듭니다. (개수와 타입을 잘 지켜서 전달해 주세요.)
+        // 필요한 인수보다 더 많은 매개변수를 써도 에러가 안남, 쓰지마셈
+        var result2 = add(10, 15, 20);
+        console.log(result2);
+        // 필요한 인수보다 더 적은 매개변수를 써도 에러가 안남, 결과값은 NaN가 나옴, 쓰지마셈
+        var result2 = add(10);
+        console.log(result2);
+        // 필요한 인수와 다른 타입의 매개변수를 써도 에러가 안남, 결과값은 10야호가 나옴, 쓰지마셈
+        var result2 = add(10, '야호');
+        console.log(result2);
+
+        // return이 1개 이상이면 첫번째 return값만 호출됨
+        function operateAll(n1, n2) {
+            return n1 + n2;
+            return n1 - n2;
+        }
+
+        var result3 = operateAll(30, 6);
+        console.log(result3);
+
+        function operateAll(n3, n4) {
+            // return [n3 + n4, n3 - n4]
+            return {
+                plus: n3 + n4,
+                minus: n3 - n4,
+                multi: n3 * n4,
+                divide: n3 / n4,
+
+            }
+        }
+        console.log(operateAll(3, 4));
+    </script>
+</body>
+</html>

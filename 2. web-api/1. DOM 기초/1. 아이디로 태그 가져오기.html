@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruits">
+        <li class="f-item">사과</li>
+        <li id="banana" class="f-item">바나나</li>
+        <li class="f-item">포도</li>
+        <li class="f-item">복숭아</li>
+    </ul>
+
+    <script>
+        // console.log(document); // 전체 출력
+        // console.log(document.documentElement); // html 태그만 출력, 사용 잘 안함
+        
+        const $fruits = document.getElementById('fruits');
+        console.log($fruits); // 관례임. $를 보고 일반 값이 아니라 html걸 따온거구나를 알 수 있음
+        
+        const $banana = document.getElementById('banana');
+        $banana.textContent = '버네이너';
+
+        $banana.classList.add('monkey'); // 클래스 이름을 추가할 때 쓰는 문법
+
+        $banana.style.fontStyle = 'italic';
+
+        $fruits.style.backgroundColor = 'red';
+    </script>
+</body>
+</html>

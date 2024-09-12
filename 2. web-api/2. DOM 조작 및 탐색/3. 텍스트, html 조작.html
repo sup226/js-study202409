@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="greet">
+        Hello <span class="highlight">World</span>
+    </div>
+
+    <ul id="food-list">
+        <li class="food">짜장면</li>
+        <li class="food">파스타</li>
+        <li class="food">볶음밥</li>
+    </ul>
+
+    <script>
+        // textContent는 마크업을 제외한 텍스트 전체를 지목.
+        // 태그를 작성해도 모두 텍스트로 인식합니다.
+        const $greet = document.getElementById('greet');
+        console.log($greet.textContent.trim()); // textContent의 type은 String, trim()은 공백 제거
+
+        const $foodList = document.getElementById('food-list');
+
+        // 자식 태그 추가
+        // 문자열 형태로 된 마크업 형식을 실제 노드로 추가해 주는 innerHTML
+        // $foodList.textContent = '<li class="food">짬뽕</li>'; // 문자 그대로 들어감.
+        // $foodList.innerHTML = '<li class="food">짬뽕</li>'; // innerHTML은 대체 됨. 짬뽕만 출력됨.
+        $foodList.innerHTML += '<li class="food">짬뽕</li>'; // 짬뽕이 추가됨.
+
+        // 자식 태그 전체 삭제
+        $foodList.innerHTML = ''; // 기존의 노드에 빈 문자열을 대체하여 대입하겠다. -> 텅 빔.
+
+        const sashimiList = [
+            {
+                foodName: '연어회',
+                price: 20000
+            },
+            {
+                foodName: '고등어회',
+                price: 30000
+            },
+            {
+                foodName: '광어회',
+                price: 10000
+            }
+        ];
+
+        sashimiList.forEach(s => {
+            $foodList.innerHTML += `<li class = "food">${s.foodName}</li>`;
+        });
+    </script>
+</body>
+
+</html>
